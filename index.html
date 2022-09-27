@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="main">
+  <div class="container">
+    <div class="main-title">
+      <p class="title"><strong>黑客松歸來 天氣預報</strong></p>
+    </div>
+    <div class="content input-zone">
+      <label for="city">Your City</label>
+      <input type="text" placeholder="input city" list="typelist" id="city">
+      <datalist id="typelist">
+        <option>London</option>
+        <option>Tokyo</option>
+        <option>Taipei</option>
+        <option>Tainan</option>
+        <option>Taichung</option>
+      </datalist>
+      <button class="submit">Submit</button>
+    </div>
+    <div class="weather-info">
+      <div class="content time">
+        <p class="time-title">Current time 現在時間:</p>
+        <p class="current-time">2022/08/21 PM 1300</p>
+      </div>
+      <div class="content temp-status">
+        <div class="weather-img"><img class="weather-img" src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="cloudy">
+        </div>
+        <p class="temp">35°C</p>
+        <div class="description">Cloudy</div>
+      </div>
+      <div class="content other">
+        <div class="humility">濕度: 70%</div>
+        <div class="wind">風速: 3.5 m/s</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./main.js"></script>
+
+<body>
+
+</body>
+
+</html>

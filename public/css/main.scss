@@ -24,9 +24,11 @@ body {
 .w-card-left {
   min-width: 200px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   position: relative;
   transform: scale(1.02);
+  color: darken(#b7c7de, 30%);
+  font-weight: 500;
 
   & .location-img,
   & .mask {
@@ -41,7 +43,7 @@ body {
   }
 
   & .mask {
-    opacity: 0.4;
+    opacity: 0.3;
     z-index: 1;
   }
 
@@ -50,6 +52,21 @@ body {
     padding: 10px;
     animation: move-in 0.5s forwards;
     z-index: 2;
+  }
+
+  & .dayname,
+  & .date,
+  & .location {
+    font-size: 1.2em;
+    color: #222831;
+  }
+
+  & .date {
+    transform: translateX(5%);
+  }
+
+  & .location {
+    transform: translateX(10%);
   }
 
   & .temp,
@@ -107,6 +124,22 @@ body {
         background-color: white;
         transform: scale(1.05);
         border-radius: 10px;
+      }
+
+      & .over {
+        position: relative;
+      }
+
+      & .over::after {
+        content: "過量!";
+        position: absolute;
+        background-color: rgb(225, 214, 19);
+        color: #5000b8;
+        width: 50px;
+        height: 20px;
+        top: -20px;
+        left: -20px;
+        border-radius: 50%;
       }
     }
   }

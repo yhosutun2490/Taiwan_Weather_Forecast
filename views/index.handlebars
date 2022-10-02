@@ -17,14 +17,15 @@
   <div class="container">
     <div class="w-card-left">
       <div class="mask"></div>
-      <img src="https://hk.blog.kkday.com/wp-content/uploads/batch_shutterstock_260172746.jpg" alt=""
-        class="location-img">
+      {{!-- <img src="https://hk.blog.kkday.com/wp-content/uploads/batch_shutterstock_260172746.jpg" alt=""
+        class="location-img"> --}}
+      <img src="https://cdn.pixabay.com/photo/2016/09/05/16/11/relaxo-1646949_1280.jpg" alt="" class="location-img">
       <div class="content">
-        <h2 class="dayname">{{tdweather.currentDay}}</h2>
+        <h1 class="dayname">{{tdweather.currentDay}}</h1>
         <p class="date">{{tdweather.currentDate}}</p>
-        <p class="loaciton">{{tdweather.location}} 臺灣(TW)</p>
+        <p class="location">{{tdweather.location}} 臺灣(TW)</p>
         <h1 class="temp">{{tdweather.temp}} 度C</h1>
-        <h3 class="w-description">Sunny</h3>
+        <h3 class="w-description">{{todayDes}}</h3>
       </div>
 
     </div>

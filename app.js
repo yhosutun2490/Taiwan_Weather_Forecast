@@ -13,11 +13,11 @@ let defaultCity = '臺南市'
 const cityData = weatherDataAPI.getCityAllData(defaultCity)
 const todayWeather = weatherDataAPI.currentWeatherData(cityData)
 const forecastWeather = weatherDataAPI.forecastWeatherData(cityData)
+const tdweatherDes = todayWeather.weatherDescription.split('。')[0]
 // 首頁路由
 app.get('/', (req, res) => {
-  res.render('index', { tdweather: todayWeather, fweather: forecastWeather })
+  res.render('index', { tdweather: todayWeather, fweather: forecastWeather, todayDes: tdweatherDes })
 })
-console.log(weatherDataAPI.totalCityName())
 
 // 監聽本地端
 app.listen(port, () => {

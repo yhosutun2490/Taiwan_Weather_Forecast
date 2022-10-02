@@ -16,13 +16,15 @@ const randomChangeCity = function () {
   const currentWeather = currentWeatherData(cityWeatherData)
   const forecastWeather = forecastWeatherData(cityWeatherData)
   renderTemplate(currentWeather, forecastWeather)
+  checkUviIsOver()
 }
 function renderTemplate(currentdata, forecastdata) {
+  const weatherDescript = currentdata.weatherDescription.split('。')
   leftCard.innerHTML = `<h2 class="dayname">${currentdata.currentDay}</h2>
         <p class="date">${currentdata.currentDate}</p>
-        <p class="loaciton">${currentdata.location} 臺灣(TW)</p>
+        <p class="location">${currentdata.location} 臺灣(TW)</p>
         <h1 class="temp">${currentdata.temp} 度C</h1>
-        <h3 class="w-description">Sunny</h3>`
+        <h3 class="w-description">${weatherDescript[0]}</h3>`
   rightCardCurrent.innerHTML = `<div class="prep-content">
             <p class="title">PRECIPITAITON</p>
             <p class="value">${currentdata.rainPercent} %</p>
@@ -47,6 +49,17 @@ function renderTemplate(currentdata, forecastdata) {
           </div>`
 
   });
+}
+
+function checkUviIsOver() {
+  const uviNodes = rightCardForecast.querySelectorAll('.forecast-content .uvi')
+  uviNodes.forEach(item => {
+    const innerText = item.innerText.split(' ')
+    const uviIndex = Number(innerText[0])
+    if (uviIndex >= 8) {
+      item.classList.add('over')
+    }
+  })
 }
 
 button.addEventListener('click', randomChangeCity)

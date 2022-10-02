@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+$base-color: #222831;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lighten($base-color, 15%);
+  width: 100%;
+}
+
+.container {
+  width: 60%;
+  min-width: 600px;
+  height: 500px;
+  margin: 5% auto;
+  color: white;
+  border-radius: 20px;
+  background-color: $base-color;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.w-card-left {
+  min-width: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  transform: scale(1.02);
+
+  & .location-img,
+  & .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #e0ffff;
+    border-radius: 20px;
+  }
+
+  & .mask {
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  & .content {
+    width: 100%;
+    padding: 10px;
+    animation: move-in 0.5s forwards;
+    z-index: 2;
+  }
+
+  & .temp,
+  & .w-description {
+    position: relative;
+    top: 200px;
+  }
+}
+
+.w-card-right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & .data-container {
+    width: 80%;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .prep-content,
+  & .humidity-content,
+  & .wind-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .forecast-w {
+    display: flex;
+    border-radius: 8px;
+    background-color: lighten($base-color, 3%);
+
+    & .forecast-content {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      text-align: center;
+      padding: 5px 0;
+
+      &:first-child {
+        color: black;
+        background-color: white;
+        transform: scale(1.05);
+        border-radius: 10px;
+      }
+
+      & * {
+        margin-top: 5px;
+      }
+
+      &:hover {
+        color: black;
+        background-color: white;
+        transform: scale(1.05);
+        border-radius: 10px;
+      }
+    }
+  }
+
+  & .change-btn {
+    align-self: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 10px 20%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #87ceeb, #5000b8);
+    ;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+@keyframes move-in {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

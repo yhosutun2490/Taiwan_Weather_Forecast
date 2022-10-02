@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/dist/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="w-card-left">
+      <div class="mask"></div>
+      <img src="https://hk.blog.kkday.com/wp-content/uploads/batch_shutterstock_260172746.jpg" alt=""
+        class="location-img">
+      <div class="content">
+        <h2 class="dayname">{{tdweather.currentDay}}</h2>
+        <p class="date">{{tdweather.currentDate}}</p>
+        <p class="loaciton">{{tdweather.location}} 臺灣(TW)</p>
+        <h1 class="temp">{{tdweather.temp}} 度C</h1>
+        <h3 class="w-description">Sunny</h3>
+      </div>
+
+    </div>
+    <div class="w-card-right">
+      <div class="data-container">
+        <div class="today-w">
+          <div class="prep-content">
+            <p class="title">PRECIPITAITON</p>
+            <p class="value">{{tdweather.rainPercent}} %</p>
+          </div>
+          <div class="humidity-content">
+            <p class="title">HUMIDITY</p>
+            <p class="value">{{tdweather.relativeRH}} %</p>
+          </div>
+          <div class="wind-content">
+            <p class="title">WIND</p>
+            <p class="value">{{tdweather.windSpeed}} m/s</p>
+          </div>
+        </div>
+        <div class="forecast-w">
+          {{#each fweather}}
+          <div class="forecast-content">
+            <i class="fa fa-sun-o w-logo" aria-hidden="true"></i>
+            <p class="today-day">{{this.date}}</p>
+            <p class="day-night">{{this.day}}</p>
+            <p class="prec-percent">{{this.prep}} %</p>
+            <p class="temp">{{this.temp}} °C</p>
+            <p class="uvi">{{this.uvi}} uv</p>
+          </div>
+          {{/each}}
+        </div>
+        <input type="submit" class="change-btn" name="change-city" value="Change Location"></input>
+      </div>
+    </div>
+    <script src="/dist/bundle.js""></script>
+</body>
+
+
+</html>

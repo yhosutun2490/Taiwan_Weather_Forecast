@@ -1,8 +1,4 @@
-const weatherData = require('./weather')
-weatherData()
-const originalData = require('./TaiwanForecast.json')
-
-function totalCityName() {
+function totalCityName(originalData) {
   const locationName = []
   originalData.forEach(item => {
     locationName.push(item.locationName)
@@ -36,7 +32,7 @@ function transDateToDay(date) {
       break;
   }
 }
-function getCityAllData(cityName) {
+function getCityAllData(cityName, originalData) {
   const cityData = originalData.find((item) => {
     return item.locationName === String(cityName)
   })
@@ -64,7 +60,6 @@ function currentWeatherData(cityData) {
   }
 }
 function forecastWeatherData(cityData) {
-  const forecastData = []
   const rainPercentage = cityData.weatherElement[0].time
   const averageTemp = cityData.weatherElement[1].time
   const uviIndex = cityData.weatherElement[9].time
@@ -99,3 +94,4 @@ module.exports = {
   currentWeatherData,
   forecastWeatherData
 }
+

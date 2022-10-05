@@ -4,19 +4,22 @@ import {
   from '../../model/transformData'
 // import sass file
 import '../css/main.scss'
+// import new weatherData
+import allCityData from '../../model/TaiwanForecast.json'
+
 const leftCard = document.querySelector('.w-card-left .content')
 const rightCardCurrent = document.querySelector('.today-w')
 const rightCardForecast = document.querySelector('.forecast-w')
 const button = document.querySelector('.change-btn')
-
+const allCity = totalCityName(allCityData)
 const randomChangeCity = function () {
-  const allCity = totalCityName()
   const randomCityName = allCity[Math.floor(Math.random() * allCity.length)]
-  const cityWeatherData = getCityAllData(randomCityName)
+  const cityWeatherData = getCityAllData(randomCityName, allCityData)
   const currentWeather = currentWeatherData(cityWeatherData)
   const forecastWeather = forecastWeatherData(cityWeatherData)
   renderTemplate(currentWeather, forecastWeather)
   checkUviIsOver()
+  checkUviIsRaining()
 }
 function renderTemplate(currentdata, forecastdata) {
   const weatherDescript = currentdata.weatherDescription.split('。')
@@ -61,5 +64,14 @@ function checkUviIsOver() {
     }
   })
 }
-
+function checkUviIsRaining() {
+  const rainNodes = rightCardForecast.querySelectorAll('.prec-percent')
+  rainNodes.forEach(item => {
+    const innerText = item.innerText.split(' ')
+    const rainPercentage = Number(innerText[0])
+    if (rainPercentage >= 70) {
+      item.classList.add('rain')
+    }
+  })
+}
 button.addEventListener('click', randomChangeCity)

@@ -1,6 +1,5 @@
 /node_modules
 /model/crawler.js
 /model/crawlerData.json
-/model/TaiwanForecast.json
 /model/locationImageSrc.json
 /model/myApiKey.json

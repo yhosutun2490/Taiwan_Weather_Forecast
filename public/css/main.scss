@@ -126,7 +126,8 @@ body {
         border-radius: 10px;
       }
 
-      & .over {
+      & .over,
+      & .rain {
         position: relative;
       }
 
@@ -135,6 +136,18 @@ body {
         position: absolute;
         background-color: rgb(225, 214, 19);
         color: #5000b8;
+        width: 50px;
+        height: 20px;
+        top: -20px;
+        left: -20px;
+        border-radius: 50%;
+      }
+
+      & .rain::after {
+        content: "rain!";
+        position: absolute;
+        background-color: rgb(19, 94, 225);
+        color: #c2b4d4;
         width: 50px;
         height: 20px;
         top: -20px;

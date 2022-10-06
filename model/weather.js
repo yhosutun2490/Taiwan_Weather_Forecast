@@ -1,8 +1,7 @@
 const axios = require('axios')
 const fs = require('fs')
 const path = require('path') // path模組可將相對路徑轉為絕對路徑
-const apiKey = require('./myApiKey.json')
-const forecastUrl = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=${apiKey.TaiwamWeatherApi}&limit=26&format=JSON`
+const forecastUrl = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=${apiKey}&limit=26&format=JSON`
 // Import your personal API Key
 // axios 本身就是 promise
 const createWeatherSeedData = axios.get(forecastUrl).then((response) => {

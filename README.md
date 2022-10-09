@@ -5,10 +5,9 @@
 後端
 * 此專案串接台灣中央氣象局開放API-各地縣市未來一周資料，以Express框架作為本地伺服器透過axios模組發送請求，並寫入種子資料檔  
 * 以node.js模組化管理Model，進行後續回傳資料處理和函式設計  
-* 基本Server-side渲染搭配hnadle-bars樣板引擎進行處理  
+* 基本Server-side渲染搭配handle-bars樣板引擎進行處理  
 
 前端
-* 以Webpack，將前端Client-side點擊的DOM處理相關js檔，進行模組化管理並轉譯成瀏覽器引擎可辦識的語法  
 * SASS語法管理CSS樣式設計，同樣透過Webpack和node-sass進行編譯管理
 
 其他技術學習  
